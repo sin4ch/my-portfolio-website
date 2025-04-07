@@ -1,18 +1,48 @@
 :root {
     --bg-color: #ffffff;
     --text-color: #000000;
-    --accent-color: #666666;
+    --text-color-secondary: #333333; /* Slightly grey text */
+    --accent-color: #777777; /* Lighter grey */
+    --accent-color-medium: #999999; /* Even lighter grey */
+    --accent-color-dark: #444444; /* Darker grey */
+    --accent-color-light: #aaaaaa; /* Very light grey */
     --highlight-color: #ffb05b;
-    --border-color: rgba(255, 255, 255, 0.1);
+    --border-color: rgba(102, 102, 102, 0.25);
     --transition-speed: 0.3s;
+    
+    /* RGB versions */
+    --bg-color-rgb: 255, 255, 255;
+    --text-color-rgb: 0, 0, 0;
+    --text-color-secondary-rgb: 51, 51, 51;
+    --accent-color-rgb: 119, 119, 119;
+    --accent-color-medium-rgb: 153, 153, 153;
+    --accent-color-dark-rgb: 68, 68, 68;
+    --accent-color-light-rgb: 170, 170, 170;
+    --highlight-color-rgb: 255, 176, 91;
 }
 
 .dark-mode {
     --bg-color: #000000;
     --text-color: #ffffff;
-    --accent-color: #999999;
-    --border-color: rgba(255, 255, 255, 0.1);
+    --text-color-secondary: #dddddd; /* Slightly grey text for dark mode */
+    --accent-color: #aaaaaa; /* Lighter grey for dark mode */
+    --accent-color-medium: #bbbbbb; /* Even lighter grey for dark mode */
+    --accent-color-dark: #bbbbbb; /* Darker grey for dark mode */
+    --accent-color-light: #cccccc; /* Very light grey for dark mode */
+    --border-color: rgba(255, 255, 255, 0.25);
+    
+    /* RGB versions for dark mode */
+    --bg-color-rgb: 0, 0, 0;
+    --text-color-rgb: 255, 255, 255;
+    --text-color-secondary-rgb: 221, 221, 221;
+    --accent-color-rgb: 170, 170, 170;
+    --accent-color-medium-rgb: 187, 187, 187;
+    --accent-color-dark-rgb: 187, 187, 187;
+    --accent-color-light-rgb: 204, 204, 204;
 }
+
+/* Typography updates with Public Sans font */
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600&display=swap');
 
 * {
     margin: 0;
@@ -24,13 +54,23 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Remove default body padding and adjust logo positioning */
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Public Sans', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
-    line-height: 1.6;
+    line-height: 1.4; /* Reduced from 1.6 to decrease space between lines */
     position: relative;
     transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+    margin: 0; /* Ensure no default margin */
+    padding: 0; /* Ensure no default padding */
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+/* Text selection styling */
+::selection {
+    background-color: var(--highlight-color);
+    color: var(--bg-color);
 }
 
 /* Overlay Effects */
@@ -63,19 +103,60 @@ body {
     background: rgba(0, 0, 0, 0.05);
 }
 
-/* Typography */
+/* Typography - Reverted font weights for headings */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 400;
     text-align: left;
+}
+
+/* Main section headings - largest and boldest */
+.section-header h2 {
+    color: var(--text-color); /* Keep section headings the original color */
+    font-weight: 600; /* Bold weight for section headers */
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem; /* Significantly increased font size */
+    letter-spacing: -0.02em; /* Tighter letter spacing for large headings */
+}
+
+/* Subheadings - medium weight */
+h3 {
+    font-size: 1.6rem; /* Increased for sub-headers */
+    font-weight: 500; /* Medium weight for h3 */
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
 }
 
 p {
     margin-bottom: 1rem;
+    color: var(--accent-color); /* Lighter grey for paragraphs */
+    font-size: 1.125rem; /* Increased from 1rem */
+    line-height: 1.4; /* Tighter line spacing for paragraphs */
+    font-weight: 400; /* Regular weight */
 }
 
 .sub-text {
-    color: var(--accent-color);
-    font-weight: 400;
+    color: var(--accent-color-medium);
+    font-weight: 300; /* Light weight for subtle text */
+    font-size: 0.85rem; /* Smaller than normal text */
+}
+
+/* Additional text hierarchy classes */
+.intro-text {
+    font-size: 2.5rem; /* Same as section heading size */
+    color: var(--text-color-secondary);
+    margin-bottom: 2rem; /* Increased margin to separate from following paragraphs */
+    line-height: 1.3; /* Adjusted line height for larger text */
+    font-weight: 400; /* Regular weight, not the same as section headings (600) */
+    letter-spacing: -0.01em; /* Slight letter spacing adjustment for readability at large size */
+}
+
+.highlight-text {
+    font-size: 1.3rem; /* Increased from 1.15rem */
+    color: var(--accent-color); /* Light grey */
+    margin-bottom: 1.75rem;
+    font-weight: 400; /* Regular weight */
+    border-left: 3px solid var(--highlight-color);
+    padding-left: 1rem;
+    line-height: 1.5;
 }
 
 /* Links */
@@ -106,12 +187,12 @@ a:hover::after {
     width: 100%;
 }
 
-/* Header & Navigation */
+/* Header & Navigation - Set exact 24px left padding */
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start; /* Changed from center to flex-start */
     align-items: center;
-    padding: 1.5rem 10%;
+    padding: 1.5rem 0; /* No horizontal padding at header level */
     position: fixed;
     width: 100%;
     top: 0;
@@ -122,13 +203,26 @@ header {
     -webkit-backdrop-filter: blur(10px);
 }
 
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 24px; /* Set exact 24px padding on both sides */
+    margin: 0;
+    box-sizing: border-box;
+}
+
 .header-hidden {
     transform: translateY(-100%);
 }
 
+/* Logo positioning - exact 24px from left edge */
 .logo {
     display: flex;
     align-items: center;
+    margin-left: 0; /* Remove negative margin */
+    padding-left: 0; /* Remove padding */
 }
 
 .profile-pic {
@@ -148,6 +242,13 @@ header {
     display: none;
 }
 
+/* Center the navbar exactly */
+.desktop-nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .desktop-nav ul {
     display: flex;
     list-style: none;
@@ -158,30 +259,30 @@ header {
 }
 
 .desktop-nav ul li a {
-    font-weight: 300;
+    font-weight: 400; /* Regular weight */
+    color: var(--text-color);
+    font-size: 0.95rem; /* Slightly smaller */
 }
 
-/* Dark Mode Toggle */
+/* Position dark mode toggle directly against the edge */
 .mode-toggle {
-    width: 24px;
-    height: 24px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
     background-color: var(--text-color);
     cursor: pointer;
+    margin-right: 1.5rem; /* Keep space between toggle and hamburger */
     position: relative;
+    right: 0; /* Reset position */
     transition: background-color var(--transition-speed) ease;
 }
 
-.toggle-circle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background-color: var(--bg-color);
-    transition: background-color var(--transition-speed) ease;
+/* Group toggle and hamburger */
+/* Header right positioning - exact 24px from right edge */
+.header-right {
+    display: flex;
+    align-items: center;
+    margin-right: 0;
 }
 
 /* Mobile Navigation */
@@ -201,6 +302,7 @@ header {
     transition: transform var(--transition-speed) ease, opacity var(--transition-speed) ease;
 }
 
+/* Mobile menu - maintain consistent margins */
 .mobile-menu {
     position: fixed;
     top: 0;
@@ -215,6 +317,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0;
 }
 
 .mobile-menu.active {
@@ -235,6 +338,13 @@ header {
     font-weight: 300;
 }
 
+.mobile-menu nav {
+    width: 100%;
+    padding: 0 24px; /* Set exact 24px padding on both sides */
+    margin: 0;
+    box-sizing: border-box;
+}
+
 .mobile-nav-toggle.active span:first-child {
     transform: translateY(7px) rotate(45deg);
 }
@@ -243,32 +353,60 @@ header {
     transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Hero Section */
+/* Hero Section - Fix styling issues */
 .hero {
     height: 100vh;
     display: flex;
     align-items: center;
-    padding: 0 10%;
+    padding: 0; /* Remove horizontal percentage padding */
 }
 
 .hero-content {
-    max-width: 800px;
+    width: 100%;
+    padding: 0 24px; /* Set exact 24px padding on both sides */
+    margin: 0;
+    box-sizing: border-box;
 }
 
+/* Restore hero text styling */
 .hero h1 {
-    font-size: 2.5rem;
-    line-height: 1.4;
-    font-weight: 400;
+    font-size: 3.8rem; /* Large text size */
+    line-height: 1.25;
+    font-weight: 600; /* Bold weight */
+    color: var(--text-color);
+    letter-spacing: -0.03em;
+    margin: 0;
 }
 
+/* Fix highlight styling for periods */
 .highlight {
-    color: var(--highlight-color);
+    color: var(--highlight-color); /* Orange color */
+    font-weight: 600;
 }
 
-/* Section Layout */
+/* Add visual emphasis to hero text */
+.hero h1 br {
+    margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.8rem; /* Smaller on mobile but still prominent */
+    }
+}
+
+/* Section Layout - Exact 24px from edges */
 .section {
-    padding: 5rem 10%;
+    padding: 5rem 0; /* Remove horizontal percentage padding */
     position: relative;
+    border-bottom: 1px solid rgba(var(--accent-color-rgb), 0.25); /* Brighter border */
+}
+
+.section-inner {
+    width: 100%;
+    padding: 0 24px; /* Set exact 24px padding on both sides */
+    margin: 0;
+    box-sizing: border-box;
 }
 
 .section-grid {
@@ -294,6 +432,8 @@ header {
 
 .skill-category h3 {
     margin-bottom: 1rem;
+    font-size: 1.5rem; /* Increased from 1.4rem */
+    font-weight: 500; /* Medium weight */
 }
 
 .skill-category ul {
@@ -302,7 +442,9 @@ header {
 
 .skill-category li {
     margin-bottom: 0.5rem;
-    color: var(--accent-color);
+    color: var(--accent-color-medium); /* Lighter grey for skills */
+    font-size: 1.05rem; /* Increased from 0.9rem */
+    font-weight: 300; /* Light weight */
 }
 
 /* Certifications Section */
@@ -314,6 +456,7 @@ header {
 
 .certification {
     margin-bottom: 1.5rem;
+    padding: 0.5rem 0;
 }
 
 .certification h3 {
@@ -327,24 +470,36 @@ header {
     gap: 2rem;
 }
 
+/* Projects with more visible borders */
 .project {
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(var(--accent-color-rgb), 0.25); /* Brighter border */
     padding: 1.5rem;
-    transition: transform var(--transition-speed) ease;
+    transition: all var(--transition-speed) ease;
+    background-color: rgba(var(--bg-color-rgb), 0.5);
 }
 
 .project:hover {
     transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .project h3 {
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
+    color: var (--text-color); /* Keep headings the original color */
+    font-size: 1.6rem; /* Increased from 1.5rem */
+    font-weight: 500; /* Medium weight */
 }
 
 .project img {
     width: 100%;
     height: auto;
     margin-bottom: 1rem;
+}
+
+.project p {
+    color: var(--accent-color-medium); /* Lighter grey for project descriptions */
+    font-size: 1.05rem; /* Increased from 0.9rem */
+    font-weight: 300; /* Light weight */
 }
 
 .project-tags {
@@ -358,14 +513,18 @@ header {
     background-color: rgba(var(--accent-color-rgb), 0.1);
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
-    font-size: 0.8rem;
-    color: var(--accent-color);
+    font-size: 0.85rem; /* Increased from 0.75rem */
+    color: var(--accent-color-light); /* Very light grey */
+    font-weight: 300; /* Light weight */
 }
 
 .github-link {
     display: inline-flex;
     align-items: center;
     margin-top: 1rem;
+    font-size: 0.85rem;
+    font-weight: 400; /* Regular weight */
+    color: var(--text-color);
 }
 
 .arrow {
@@ -399,6 +558,35 @@ header {
 
 .community-item h3 {
     margin-bottom: 0.5rem;
+    font-weight: 500; /* Medium weight */
+}
+
+.community-item p {
+    color: var(--accent-color-medium); /* Lighter grey for descriptions */
+    font-size: 1.05rem; /* Increased from 0.9rem */
+    font-weight: 300; /* Light weight */
+}
+
+/* Section-specific enhancements */
+.community-items {
+    margin-top: 1.5rem;
+}
+
+/* Community section - two-column layout */
+.community-items-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+}
+
+.community-column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Community items - maintain proper spacing between items */
+.community-item:last-child {
+    margin-bottom: 0;
 }
 
 /* Experience Section */
@@ -407,7 +595,51 @@ header {
 }
 
 .experience-item h3 {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
+    font-weight: 500; /* Medium weight */
+    font-size: 1.7rem; /* Increased from original */
+}
+
+.experience-item p:not(.sub-text) {
+    color: var(--accent-color-medium); /* Lighter grey for descriptions */
+    font-size: 1.05rem; /* Increased from 0.9rem */
+    font-weight: 300; /* Light weight */
+}
+
+.experience-item .sub-text {
+    color: var(--accent-color-medium); /* Medium grey for subtitles */
+    display: inline-block;
+    margin-bottom: 0.6rem;
+    font-weight: 300; /* Light weight */
+    font-size: 1rem; /* Increased from 0.85rem */
+}
+
+/* Add more spacing between items */
+.experience-item:not(:last-child),
+.community-item:not(:last-child),
+.education-item:not(:last-child) {
+    margin-bottom: 2.5rem;
+}
+
+/* Experience section - two-column layout */
+.experience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+}
+
+.experience-column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Experience items styling - adjust spacing for grid layout */
+.experience-item {
+    margin-bottom: 2.5rem;
+}
+
+.experience-column .experience-item:last-child {
+    margin-bottom: 0;
 }
 
 /* Contact Section */
@@ -419,14 +651,29 @@ header {
 
 .contact-links a {
     position: relative;
+    color: var(--text-color);
+    transition: color var(--transition-speed) ease;
+    font-size: 1.1rem; /* Slightly larger than regular text */
+    font-weight: 400; /* Regular weight */
+    margin-right: 2rem;
 }
 
-/* Footer */
+.contact-links a:hover {
+    color: var(--highlight-color);
+}
+
+/* Footer - Exact 24px from edges */
 footer {
     text-align: center;
-    padding: 2rem;
-    color: var(--accent-color);
-    font-size: 0.9rem;
+    padding: 2rem 24px; /* Set exact 24px padding on both sides */
+    color: var(--accent-color-light); /* Very light grey */
+    font-size: 0.9rem; /* Increased from 0.8rem */
+    font-weight: 300; /* Light weight */
+}
+
+footer p {
+    width: 100%;
+    margin: 0;
 }
 
 /* Media Queries */
@@ -457,7 +704,64 @@ footer {
     }
 
     .hero h1 {
-        font-size: 2rem;
+        font-size: 2.8rem; /* Smaller on mobile but still prominent */
+    }
+
+    .section-header h2 {
+        font-size: 2.2rem; /* Slightly smaller on mobile */
+    }
+    
+    h3 {
+        font-size: 1.4rem; /* Smaller on mobile */
+    }
+
+    .experience-item h3,
+    .community-item h3,
+    .education-item h3 {
+        font-size: 1.5rem; /* Adjusted for mobile */
+    }
+    
+    p, .skill-category li, .project p,
+    .experience-item p:not(.sub-text),
+    .community-item p,
+    .education-item p:not(.sub-text) {
+        font-size: 1rem; /* Slightly smaller on mobile */
+    }
+
+    .community-items-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .community-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .experience-item {
+        margin-bottom: 2.5rem;
+    }
+    
+    .experience-column .experience-item:last-child {
+        margin-bottom: 2.5rem;
+    }
+    
+    .experience-column:last-child .experience-item:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Set 12px padding for mobile */
+    .header-content,
+    .hero-content,
+    .section-inner,
+    .mobile-menu nav,
+    footer {
+        padding-left: 12px;
+        padding-right: 12px;
     }
 }
 
@@ -485,10 +789,12 @@ footer {
     --text-color-rgb: 0, 0, 0;
     --accent-color-rgb: 102, 102, 102;
     --highlight-color-rgb: 255, 176, 91;
+    --border-color: rgba(102, 102, 102, 0.25); /* Brighter border for light mode */
 }
 
 .dark-mode {
     --bg-color-rgb: 0, 0, 0;
     --text-color-rgb: 255, 255, 255;
     --accent-color-rgb: 153, 153, 153;
+    --border-color: rgba(255, 255, 255, 0.25); /* Brighter border for dark mode */
 }

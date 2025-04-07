@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Osinachi Okpara | Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script src="js/script.js" defer></script>
 </head>
 <body>
@@ -14,34 +14,36 @@
     
     <!-- Navigation Bar -->
     <header>
-        <div class="logo">
-            <a href="#" class="home-link">
-                <img src="assets/images/LinkedIn DP_September_2024_2.png" alt="Osinachi Okpara" class="profile-pic">
-                <span>Osinachi Okpara</span>
-            </a>
-        </div>
-        <nav class="desktop-nav">
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#community">Community</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="mode-toggle">
-            <div class="toggle-circle"></div>
-        </div>
-        <div class="mobile-nav-toggle">
-            <span></span>
-            <span></span>
+        <div class="header-content">
+            <div class="logo">
+                <a href="#" class="home-link">
+                    <img src="assets/images/LinkedIn DP_September_2024_2.png" alt="Osinachi Okpara" class="profile-pic">
+                    <!-- <span>Osinachi Okpara</span> -->
+                </a>
+            </div>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#community">Community</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <div class="mode-toggle"></div>
+                <div class="mobile-nav-toggle">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
         </div>
     </header>
 
     <div class="mobile-menu">
         <nav>
             <ul>
-                <li><a href="#about">About Me</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#community">Community</a></li>
                 <li><a href="#experience">Experience</a></li>
@@ -57,7 +59,6 @@
                 AWS Community Builder<span class="highlight">.</span><br>
                 DevOps Engineer<span class="highlight">.</span><br>
                 Speaker<span class="highlight">.</span><br>
-                Trainer<span class="highlight">.</span><br>
                 Learner<span class="highlight">.</span>
             </h1>
         </div>
@@ -65,55 +66,70 @@
 
     <!-- About Me Section -->
     <section id="about" class="section">
-        <div class="section-grid">
-            <div class="section-header">
-                <h2>About Me</h2>
-            </div>
-            <div class="section-content">
-                <p>I am an AWS Community Builder, DevOps Engineer, Trainer, and Speaker with extensive experience in cloud engineering, community building, and technical training. I'm passionate about building communities and making an impact in the AWS cloud and DevOps space through founding and leading multiple tech communities.</p>
-                <p>My expertise spans cloud architecture, infrastructure as code, containerization, and continuous integration/delivery pipelines. I thrive in environments where I can share knowledge and help others grow in their technical journey.</p>
+        <div class="section-inner">
+            <div class="section-grid">
+                <div class="section-header">
+                    <h2>About Me</h2>
+                </div>
+                <div class="section-content">
+                    <p class="intro-text">Hi, I'm Osinachi! I am an AWS Community<br>Builder in the Networking & Content<br>Delivery Category with experience in cloud<br>engineering, community building, and<br>technical training.</p>
+                    <p>I started my cloud learning journey in Dec 2023 and it's been AWSome ever since!<br> I believe that the future is ACTUALLY cloud - not AI, not quantum computing! Without the <br> cloud, these technologies would be unable to achieve their core purpose: widespread <br>accessibility and impact.</p>
+                    <p>I'm passionate about community, value distribution, and impact especially in the AWS cloud<br> and DevOps space. To this effect, I founded two cloud/DevOps groups (The Cloud Crowd<br> & DevOps Conclave) to help others find community and opportunities to learn, grow,<br> collaborate and make impact in their own spheres.</p>
+                    <p>After hours, I love music, games and I also have a side passion for product design.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
     <section id="skills" class="section">
-        <div class="section-grid">
-            <div class="section-header">
-                <h2>Skills</h2>
-            </div>
-            <div class="section-content">
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Languages</h3>
-                        <ul>
-                            <li>Python</li>
-                            <li>Bash</li>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>AWS Services</h3>
-                        <ul>
-                            <li>Amazon EC2</li>
-                            <li>Amazon Rekognition</li>
-                            <li>Amazon S3</li>
-                            <li>Amazon CloudWatch</li>
-                            <li>AWS Lambda</li>
-                            <li>Amazon RDS</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Tools</h3>
-                        <ul>
-                            <li>Git</li>
-                            <li>Docker</li>
-                            <li>Terraform</li>
-                            <li>Jenkins</li>
-                            <li>GitHub Actions</li>
-                        </ul>
+        <div class="section-inner">
+            <div class="section-grid">
+                <div class="section-header">
+                    <h2>Skills</h2>
+                </div>
+                <div class="section-content">
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>Languages</h3>
+                            <ul>
+                                <li>Python</li>
+                                <li>Bash</li>
+                                <li>YAML</li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>HCL</li>
+                                <li>JSON</li>
+                                <li>Markdown</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>AWS Services</h3>
+                            <ul>
+                                <li>Amazon EC2</li>
+                                <li>Amazon Rekognition</li>
+                                <li>Amazon S3</li>
+                                <li>AWS Lambda</li>
+                                <li>Amazon CloudFront</li>
+                                <li>Elemental MediaConvert</li>
+                                <li>AWS IAM</li>
+                                <li>AWS CloudFormation</li>
+                                <li>Amazon CloudWatch</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Tools</h3>
+                            <ul>
+                                <li>Git</li>
+                                <li>GitHub</li>
+                                <li>Docker</li>
+                                <li>Nginx</li>
+                                <li>Terraform</li>
+                                <li>GitHub Actions</li>
+                                <li>VSCode</li>
+                                <li>Neovim</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -122,23 +138,23 @@
 
     <!-- Certifications Section -->
     <section id="certifications" class="section">
-        <div class="section-grid">
-            <div class="section-header">
-                <h2>Certifications</h2>
-            </div>
-            <div class="section-content">
-                <div class="certifications-grid">
-                    <div class="certification">
-                        <h3>AWS Certified Solutions Architect</h3>
-                        <p class="sub-text">Amazon Web Services</p>
-                    </div>
-                    <div class="certification">
-                        <h3>AWS Certified Developer</h3>
-                        <p class="sub-text">Amazon Web Services</p>
-                    </div>
-                    <div class="certification">
-                        <h3>AWS Certified DevOps Engineer</h3>
-                        <p class="sub-text">Amazon Web Services</p>
+        <div class="section-inner">
+            <div class="section-grid">
+                <div class="section-header">
+                    <h2>Certifications</h2>
+                </div>
+                <div class="section-content">
+                    <div class="certifications-grid">
+                        <div class="certification">
+                            <h3>AWS Certified Cloud Practitioner</h3>
+                        </div>
+                        <div class="certification">
+                            <h3>AWS Solutions Architect Associate</h3>
+                            <p class="sub-text">in view</p>
+                        </div>
+                        <div class="certification">
+                            <h3>AWS Educate: Cloud Computing 101</h3>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -147,44 +163,56 @@
 
     <!-- Projects Section -->
     <section id="projects" class="section">
-        <div class="section-grid">
-            <div class="section-header">
-                <h2>Projects</h2>
-            </div>
-            <div class="section-content">
-                <div class="projects-grid">
-                    <div class="project">
-                        <h3>Quick Face Sort</h3>
-                        <img src="img/project1.jpg" alt="Quick Face Sort Project">
-                        <div class="project-tags">
-                            <span>AWS Rekognition</span>
-                            <span>Python</span>
-                            <span>S3</span>
+        <div class="section-inner">
+            <div class="section-grid">
+                <div class="section-header">
+                    <h2>Projects</h2>
+                </div>
+                <div class="section-content">
+                    <div class="projects-grid">
+                        <div class="project">
+                            <h3>Quick Face Sort</h3>
+                            <img src="assets/images/inspiration/Screenshot 2025-04-07 193138.png" alt="Quick Face Sort Project">
+                            <div class="project-tags">
+                                <span>AWS Rekognition</span>
+                                <span>S3</span>
+                                <span>Lambda</span>
+                                <span>CloudWatch</span>
+                                <span>IAM</span>
+                                <span>Terraform</span>
+                                <span>Python</span>
+                            </div>
+                            <p>An app that automatically sorts images by recognizing faces and organizing media of specific people from large folders.</p>
+                            <a href="https://github.com/sin4ch/quick-face-sort" class="github-link">View on GitHub <span class="arrow">→</span></a>
                         </div>
-                        <p>An AWS-powered solution that automatically sorts and organizes images based on facial recognition.</p>
-                        <a href="https://github.com/username/quick-face-sort" class="github-link">View on GitHub <span class="arrow">→</span></a>
-                    </div>
-                    <div class="project">
-                        <h3>Dockerized Full Stack Web App</h3>
-                        <img src="img/project2.jpg" alt="Dockerized Web App Project">
-                        <div class="project-tags">
-                            <span>Docker</span>
-                            <span>AWS</span>
-                            <span>CI/CD</span>
+                        <div class="project">
+                            <h3>Dockerized Full Stack Web App Deployment</h3>
+                            <img src="assets/images/inspiration/Screenshot 2025-04-07 193640.png" alt="Dockerized Web App Project">
+                            <div class="project-tags">
+                                <span>Amazon EC2</span>
+                                <span>IAM</span>
+                                <span>Docker</span>
+                                <span>Docker Compose</span>
+                                <span>DNS</span>
+                                <span>Nginx</span>
+                            </div>
+                            <p>Deployed & maintained a three-tier app (React, FastAPI, PostgreSQL) on AWS.</p>
+                            <a href="https://github.com/sin4ch/Osinachi-HNG-Stage-2" class="github-link">View on GitHub <span class="arrow">→</span></a>
                         </div>
-                        <p>A containerized web application with automated deployment pipeline using Docker and AWS services.</p>
-                        <a href="https://github.com/username/dockerized-webapp" class="github-link">View on GitHub <span class="arrow">→</span></a>
-                    </div>
-                    <div class="project">
-                        <h3>On-Demand Video Streaming Platform</h3>
-                        <img src="img/project3.jpg" alt="Video Streaming Platform">
-                        <div class="project-tags">
-                            <span>AWS MediaConvert</span>
-                            <span>CloudFront</span>
-                            <span>Lambda</span>
+                        <div class="project">
+                            <h3>On-Demand Video Streaming Platform</h3>
+                            <img src="assets/images/inspiration/Screenshot 2025-04-07 193756.png" alt="Video Streaming Platform">
+                            <div class="project-tags">
+                                <span>Amazon IAM</span>
+                                <span>CloudFront</span>
+                                <span>S3</span>
+                                <span>Elemental MediaConvert</span>
+                                <span>CloudWatch</span>
+                                <span>DNS</span>
+                            </div>
+                            <p>Setup video-on-demand (VOD) & implemented automatic ABR (auto bitrate) configuration for bitrate switching based on network strength to ensure a seamless consumer streaming experience.</p>
+                            <a href="#" class="github-link">View on GitHub <span class="arrow">→</span></a>
                         </div>
-                        <p>Serverless video streaming solution using AWS media services and content delivery networks.</p>
-                        <a href="https://github.com/username/video-streaming-platform" class="github-link">View on GitHub <span class="arrow">→</span></a>
                     </div>
                 </div>
             </div>
@@ -193,26 +221,29 @@
 
     <!-- Speaking Engagements Section -->
     <section id="speaking" class="section">
-        <div class="section-grid">
-            <div class="section-header">
-                <h2>Speaking Engagements</h2>
-            </div>
-            <div class="section-content">
-                <div class="speaking-grid">
-                    <div class="speaking-event">
-                        <h3>AWS Community Day 2024</h3>
-                        <p>DevOps Best Practices for Cloud-Native Applications</p>
-                        <p class="sub-text">Workshop, Lagos</p>
-                    </div>
-                    <div class="speaking-event">
-                        <h3>DevOps Conference 2023</h3>
-                        <p>Infrastructure as Code: Beyond the Basics</p>
-                        <p class="sub-text">Keynote, Virtual</p>
-                    </div>
-                    <div class="speaking-event">
-                        <h3>Cloud Builders Summit</h3>
-                        <p>Serverless Architecture Patterns</p>
-                        <p class="sub-text">Panel Discussion, Abuja</p>
+        <div class="section-inner">
+            <div class="section-grid">
+                <div class="section-header">
+                    <h2>Speaking Engagements</h2>
+                </div>
+                <div class="section-content">
+                    <p class="intro-text">I have spoken at over 15 events on topics related to AWS cloud, DevOps, and technical training.</p>
+                    <div class="speaking-grid">
+                        <div class="speaking-event">
+                            <h3>AWS Community Day West Africa 2024</h3>
+                            <p>Registration Unit Co-Lead Volunteer</p>
+                            <p class="sub-text">Lagos, Nigeria</p>
+                        </div>
+                        <div class="speaking-event">
+                            <h3>NexaScale Office Hours</h3>
+                            <p>Various Cloud and DevOps topics</p>
+                            <p class="sub-text">Lead Speaker Liaison</p>
+                        </div>
+                        <div class="speaking-event">
+                            <h3>DevOps Conclave Meetups</h3>
+                            <p>DevOps best practices and collaboration</p>
+                            <p class="sub-text">Founder & Host</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -221,22 +252,39 @@
 
     <!-- Community Section -->
     <section id="community" class="section">
-        <div class="section-grid">
-            <div class="section-header">
-                <h2>Volunteering & Community</h2>
-            </div>
-            <div class="section-content">
-                <div class="community-item">
-                    <h3>AWS Community Builder</h3>
-                    <p>Contributing to the AWS technical community through content creation, mentoring, and knowledge sharing.</p>
+        <div class="section-inner">
+            <div class="section-grid">
+                <div class="section-header">
+                    <h2>Volunteering & Community</h2>
                 </div>
-                <div class="community-item">
-                    <h3>Registration Unit Co-Lead for AWS Community Day</h3>
-                    <p>Coordinating registration logistics for one of the largest AWS community events in the region.</p>
-                </div>
-                <div class="community-item">
-                    <h3>Tech Community Founder</h3>
-                    <p>Founded multiple tech communities focused on cloud computing and DevOps practices to foster collaborative learning.</p>
+                <div class="section-content">
+                    <p class="intro-text">Building communities to empower others in the cloud and DevOps journey.</p>
+                    <div class="community-items-grid">
+                        <div class="community-column">
+                            <div class="community-item">
+                                <h3>AWS Community Builder - <br>Networking & Content Delivery</h3>
+                                <p>Contributing to the AWS technical community <br>through content creation, mentoring, and<br> knowledge sharing.</p>
+                            </div>
+                            <div class="community-item">
+                                <h3>The Cloud Crowd</h3>
+                                <p>Founded this community in January 2024<br> dedicated to helping people, particularly newbies, understand cloud technology and pursue<br> careers in cloud engineering. Currently 200+<br> members strong!</p>
+                            </div>
+                            <div class="community-item">
+                                <h3>Developer Ambassador</h3>
+                                <p>ARM Semiconductors</p>
+                            </div>
+                        </div>
+                        <div class="community-column">
+                            <div class="community-item">
+                                <h3>DevOps Conclave</h3>
+                                <p>Founded this community in June 2024 to bring<br> DevOps engineers together to build projects,<br> share job opportunities, and troubleshoot<br> challenges together. Currently 120+<br> members with ~20% active members.</p>
+                            </div>
+                            <div class="community-item">
+                                <h3>NexaScale</h3>
+                                <p>Co-Lead Cloud Engineering Programs Manager,<br> managing 12+ mentors and 40 mentees in the<br> Cloud Engineering Mentorship Program.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -244,25 +292,76 @@
 
     <!-- Experience Section -->
     <section id="experience" class="section">
-        <div class="section-grid">
-            <div class="section-header">
-                <h2>Experience</h2>
+        <div class="section-inner">
+            <div class="section-grid">
+                <div class="section-header">
+                    <h2>Experience</h2>
+                </div>
+                <div class="section-content">
+                    <div class="experience-grid">
+                        <div class="experience-column">
+                            <div class="experience-item">
+                                <h3>Freelance Technical Writer</h3>
+                                <p class="sub-text">EverythingDevOps, February 2025 - Present</p>
+                                <p>Creating technical content focusing on AWS services,<br> DevOps methodologies, and infrastructure automation.</p>
+                            </div>
+                            <div class="experience-item">
+                                <h3>Cloud Engineering Mentorship<br>Program Manager</h3>
+                                <p class="sub-text">NexaScale, November 2024 - Present</p>
+                                <p>Co-coordinating the NexaScale Cloud Engineering<br>Mentorship Program, pairing up-and-comers with<br>industry specialists. Managing 12+ mentors and 40<br>mentees in AWS, Azure, DevSecOps & Cloud Security<br> tracks.</p>
+                            </div>
+                            <div class="experience-item">
+                                <h3>Lead Speaker Liaison - Cloud Engineering</h3>
+                                <p class="sub-text">NexaScale, May 2024 - Present</p>
+                                <p>Brought speakers to take community members<br>through cloud and DevOps related topics<br>during bi-weekly Office Hours.</p>
+                            </div>
+                            <div class="experience-item">
+                                <h3>DevOps Engineering Intern</h3>
+                                <p class="sub-text">HNG Tech, June 2024 - July 2024</p>
+                                <p>Wrote Bash scripts to automate routine tasks<br>and created/maintained microserviced full-stack<br>web app deployments on AWS.</p>
+                            </div>
+                        </div>
+                        <div class="experience-column">
+                            <div class="experience-item">
+                                <h3>Cloud Computing Instructor</h3>
+                                <p class="sub-text">3MTT Nigeria, August 2024 - December 2024</p>
+                                <p>Trained Cohort 2 fellows in AWS Cloud Services,<br>Linux commands, Git, Networking, Virtualization,<br>Containerization, and Ansible.</p>
+                            </div>
+                            <div class="experience-item">
+                                <h3>AWS Certified Cloud Practitioner<br>Exam Prep Trainer</h3>
+                                <p class="sub-text">Solavise Technologies Institute, Sep - Oct. 2024</p>
+                                <p>Helped 10+ students prepare for the AWS<br>Certified Cloud Practitioner exam with daily<br>virtual classes and practice test sessions.</p>
+                            </div>
+                            <div class="experience-item">
+                                <h3>Developer Relations Engineer</h3>
+                                <p class="sub-text">Learn to Cloud, January 2025 - February 2025</p>
+                                <p>Contributed to Learn To Cloud v2 by collecting<br>user feedback and working with the team to<br>shape the platform into a comprehensive cloud<br>learning resource.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="section-content">
-                <div class="experience-item">
-                    <h3>DevOps Engineer</h3>
-                    <p class="sub-text">TechGlobal Inc., 2022 - Present</p>
-                    <p>Leading CI/CD implementation, infrastructure automation, and cloud architecture design for enterprise applications.</p>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="section-inner">
+            <div class="section-grid">
+                <div class="section-header">
+                    <h2>Education</h2>
                 </div>
-                <div class="experience-item">
-                    <h3>Cloud Engineering Mentor</h3>
-                    <p class="sub-text">CloudStart Academy, 2021 - Present</p>
-                    <p>Mentoring aspiring cloud professionals through structured training programs and hands-on projects.</p>
-                </div>
-                <div class="experience-item">
-                    <h3>Technical Writer</h3>
-                    <p class="sub-text">Cloud Tech Publications, 2020 - 2022</p>
-                    <p>Created technical content focusing on AWS services, DevOps methodologies, and infrastructure automation.</p>
+                <div class="section-content">
+                    <div class="education-item">
+                        <h3>University of Benin</h3>
+                        <p class="sub-text">Bachelor of Engineering (BEng) - Computer Engineering</p>
+                        <p>March 2019 - April 2024</p>
+                    </div>
+                    <div class="education-item">
+                        <h3>AWS re/Start Program</h3>
+                        <p class="sub-text">EdoInnovates</p>
+                        <p>March 2024 - June 2024</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -270,17 +369,19 @@
 
     <!-- Contact Section -->
     <section id="contact" class="section">
-        <div class="section-grid">
-            <div class="section-header">
-                <h2>Contact</h2>
-            </div>
-            <div class="section-content">
-                <div class="contact-links">
-                    <a href="https://twitter.com/username" target="_blank">X</a>
-                    <a href="https://linkedin.com/in/username" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/username" target="_blank">GitHub</a>
-                    <a href="https://linktr.ee/username" target="_blank">LinkTree</a>
-                    <a href="mailto:okparaosi17@gmail.com">okparaosi17@gmail.com</a>
+        <div class="section-inner">
+            <div class="section-grid">
+                <div class="section-header">
+                    <h2>Contact</h2>
+                </div>
+                <div class="section-content">
+                    <div class="contact-links">
+                        <a href="https://x.com/sin4ch" target="_blank">X</a>
+                        <a href="https://linkedin.com/in/osinachiokpara" target="_blank">LinkedIn</a>
+                        <a href="https://github.com/sin4ch" target="_blank">GitHub</a>
+                        <a href="https://linktr.ee/osinachiokpara" target="_blank">LinkTree</a>
+                        <a href="mailto:okparaosi17@gmail.com">okparaosi17@gmail.com</a>
+                    </div>
                 </div>
             </div>
         </div>
