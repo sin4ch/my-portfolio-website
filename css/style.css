@@ -22,7 +22,7 @@
 }
 
 .dark-mode {
-    --bg-color: #000000;
+    --bg-color: #050505; /* Almost black, just barely distinguishable from pure black */
     --text-color: #ffffff;
     --text-color-secondary: #dddddd; /* Slightly grey text for dark mode */
     --accent-color: #aaaaaa; /* Lighter grey for dark mode */
@@ -32,7 +32,7 @@
     --border-color: rgba(255, 255, 255, 0.25);
     
     /* RGB versions for dark mode */
-    --bg-color-rgb: 0, 0, 0;
+    --bg-color-rgb: 05, 05, 05; /* Updated to match the hex value */
     --text-color-rgb: 255, 255, 255;
     --text-color-secondary-rgb: 221, 221, 221;
     --accent-color-rgb: 170, 170, 170;
@@ -42,7 +42,7 @@
 }
 
 /* Typography updates with Public Sans font */
-@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600&display=swap');
 
 * {
     margin: 0;
@@ -192,11 +192,13 @@ header {
     display: flex;
     justify-content: flex-start; /* Changed from center to flex-start */
     align-items: center;
-    padding: 1.5rem 0; /* No horizontal padding at header level */
+    padding: 24px 0; /* Keep 24px vertical padding */
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    height: 72px; /* Set exact height */
+    box-sizing: border-box;
     transition: transform 0.4s ease;
     background: rgba(var(--bg-color-rgb), 0.8);
     backdrop-filter: blur(10px);
@@ -211,6 +213,7 @@ header {
     padding: 0 24px; /* Set exact 24px padding on both sides */
     margin: 0;
     box-sizing: border-box;
+    height: 24px; /* Match the logo height */
 }
 
 .header-hidden {
@@ -226,8 +229,8 @@ header {
 }
 
 .profile-pic {
-    width: 40px;
-    height: 40px;
+    width: 24px; /* Reduced from 40px to 24px */
+    height: 24px; /* Reduced from 40px to 24px */
     border-radius: 50%;
     margin-right: 1rem;
 }
@@ -255,13 +258,18 @@ header {
 }
 
 .desktop-nav ul li {
-    margin-left: 2rem;
+    margin-left: 16px; /* Changed from 2rem to 16px for consistent spacing */
+}
+
+.desktop-nav ul li:first-child {
+    margin-left: 0; /* Ensure the first item doesn't have a left margin */
 }
 
 .desktop-nav ul li a {
-    font-weight: 400; /* Regular weight */
+    font-weight: 200; /* Keep regular weight */
     color: var(--text-color);
-    font-size: 0.95rem; /* Slightly smaller */
+    font-size: 1rem; /* Changed to 24px (1.5rem at 16px base font) */
+    padding: 0; /* Remove padding */
 }
 
 /* Position dark mode toggle directly against the edge */
@@ -762,6 +770,15 @@ footer p {
     footer {
         padding-left: 12px;
         padding-right: 12px;
+    }
+    
+    header {
+        padding: 24px 0; /* Same vertical padding on mobile */
+        height: 72px; /* Same total height */
+    }
+    
+    .header-content {
+        height: 24px; /* Same content height */
     }
 }
 
